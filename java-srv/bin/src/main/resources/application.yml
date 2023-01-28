@@ -1,0 +1,32 @@
+#######################
+# Spring boot properties
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+########################
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+      
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  datasource:
+    url: jdbc:postgresql://db/animal
+    driver-class-name: org.postgresql.Driver
+    username: maria
+    password: pass
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 50
+      minimum-idle: 20
+
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
